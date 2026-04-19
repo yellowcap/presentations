@@ -48,7 +48,7 @@ const resolvedImage = computed(() => resolveAssetUrl(props.image))
 </script>
 
 <template>
-  <div class="qrcode-container" :class="{ 'full-width': fullWidth }">
+  <a class="qrcode-container" :class="{ 'full-width': fullWidth }">
     <QRCode
       v-if="qrCodeUrl"
       :type="type"
@@ -58,7 +58,7 @@ const resolvedImage = computed(() => resolveAssetUrl(props.image))
       :data="qrCodeUrl"
       :dotsOptions="dotsOptions"
     />
-  </div>
+  </a>
 </template>
 
 <style scoped>
