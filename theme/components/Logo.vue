@@ -20,10 +20,10 @@ const props = withDefaults(defineProps<Props>(), {
 
 const positionClasses = computed(() => {
   const positions = {
-    'top-left': 'top-5 left-5',
-    'top-right': 'top-5 right-5',
-    'bottom-left': 'bottom-5 left-5',
-    'bottom-right': 'bottom-5 right-5',
+    'top-left': 'top-6 left-6',
+    'top-right': 'top-6 right-6',
+    'bottom-left': 'bottom-6 left-6',
+    'bottom-right': 'bottom-6 right-6',
     'center': 'top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'
   }
   return positions[props.position] || positions['top-right']
