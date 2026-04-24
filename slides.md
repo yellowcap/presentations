@@ -316,11 +316,11 @@ image: /images/theme/landsat9-taklimakan-desert-china.jpg
     top: '4em',
     left: '7em',
   }"
-  :customStyle="{ mixBlendMode: 'multiply' }"
+  <!-- :multiply=false -->
 />
 ```
 
-Play around with the [`mix-blend-mode`](https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode#syntax)
+The Decorative Rectangle has [`mix-blend-mode: multiply`](https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode#syntax) set by default; use the prop `:multiple=false` to render a solid opaque block.
 
 <DecorativeRectangle
   width="23em"
@@ -330,7 +330,6 @@ Play around with the [`mix-blend-mode`](https://developer.mozilla.org/en-US/docs
     bottom: '2%',
     left: '-1em',
   }"
-  :customStyle="{ mixBlendMode: 'multiply' }"
 />
 <LogoHorNegMono position="bottom-left" />
 ---
