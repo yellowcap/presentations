@@ -12,16 +12,16 @@ const props = withDefaults(
       left?: string;
       right?: string;
     };
-    customStyle?: object;
+    multiply?: boolean;
   }>(),
   {
     color: "var(--slidev-theme-primary)",
     width: "16rem",
     height: "24rem",
-    opacity: 0.9,
+    opacity: 1,
     zIndex: 0,
+    multiply: true,
     position: {},
-    customStyle: () => ({}),
   }
 );
 </script>
@@ -36,7 +36,7 @@ const props = withDefaults(
       opacity: opacity,
       zIndex: zIndex,
       ...position,
-      ...customStyle,
+      ...(multiply ? { mixBlendMode: 'multiply' } : {}),
     }"
   ></div>
   <div
