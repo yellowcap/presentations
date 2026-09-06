@@ -27,6 +27,9 @@ theme/
 │   └── shiki.ts              # Code highlighting setup
 ├── styles/
 │   └── index.css             # Brand colors and typography
+├── custom-nav-controls.vue   # Laser pointer toolbar button
+├── global-top.vue            # Laser pointer canvas
+├── laser.ts                  # Laser pointer state and config
 ├── index.ts                  # Theme entry point
 └── package.json              # Theme metadata
 ```
@@ -51,6 +54,33 @@ Layouts:
 2. cover - Title slides with gradient background
 3. title - Title slides with image on bottom third
 4. two-cols - Two-column layout with configurable gap and ratio
+
+### Laser Pointer
+
+Draws a red trail that fades out behind the cursor, for pointing at things while
+presenting. Unlike Slidev's built-in drawing tool, the marks are temporary.
+
+Two ways to use it:
+
+- Click the squiggle button in the toolbar to toggle it on, then just move the pointer.
+- Hold `Shift` and drag, without turning anything on.
+
+In presenter mode the trail is mirrored to the audience window. It rides on
+Slidev's presenter cursor sync, so "Show presenter cursor" must be enabled — the
+toolbar button turns it on for you, `Shift`+drag alone does not.
+
+Tune it from the headmatter of `slides.md`:
+
+```md
+---
+theme: ./theme
+themeConfig:
+  laserColor: '#CF3F02'   # any CSS color, default '#ef4444'
+  laserWidth: 8           # stroke width in px, default 6
+  laserFade: 1500         # how long a mark lives in ms, default 900
+  laserEnabled: true      # start with the laser on, default false
+---
+```
 
 ### Usage
 

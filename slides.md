@@ -14,6 +14,10 @@ addons:
     - slidev-addon-qrcode
 
 theme: './theme'
+themeConfig:
+  laserColor: '#CF3F02'   # any CSS color, default '#ef4444'
+  laserWidth: 8           # stroke width in px, default 6
+  laserFade: 1500         # how long a mark lives in ms, default 900
 layout: title
 image: /images/theme/lena-delta.jpg
 ---
