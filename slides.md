@@ -1,7 +1,7 @@
 ---
-title: "WRI's Global Nature Watch: Geospatial AI in Plain Language"
+title: "Global Nature Watch Horizon: Geospatial AI in Plain Language"
 info: |
-  Demo deck for Global Nature Watch (project-zeno): Daniel Wiesmann, Soumya Ranjan, Leo Thomas, Development Seed.
+  Demo deck for Global Nature Watch Horizon (project-zeno): Daniel Wiesmann, Soumya Ranjan, Leo Thomas, Development Seed.
 class: text-center
 highlighter: shiki
 drawings:
@@ -22,7 +22,7 @@ layout: title
 image: /images/theme/landsat9-western-guinea-bissau.jpg
 ---
 
-# WRI's Global Nature Watch
+# Global Nature Watch Horizon
 
 ::subtitle::
 Geospatial AI in Plain Language
@@ -62,26 +62,29 @@ layout: default
 
 # What it is
 
-**Global Nature Watch** (formerly Global Forest Watch): nature monitoring designed for action.
+**Global Nature Watch Horizon** is an open, AI-powered system for monitoring land and ecosystems. It is in preview.
 
-* **The goal:** data, technology and tools that help people everywhere protect forests and natural ecosystems
-* **Who uses it:** governments, NGOs, journalists and companies, for alerts, country statistics and supply chain risk
-* **This demo:** an AI agent, built with WRI and the Land & Carbon Lab, that answers these questions in plain language. No GIS expertise needed
+* **The context:** Global Forest Watch is becoming **Global Nature Watch**, with monitoring that reaches beyond forests. Horizon is the AI platform preview of that vision
+* **Who builds it:** the Land & Carbon Lab (Bezos Earth Fund and WRI) with Global Nature Watch, and Development Seed
+* **How you use it:** ask in plain language. Get maps, charts and statistics. No GIS expertise needed
+* **Live now:** anyone can try it at [horizon.globalnaturewatch.org](https://horizon.globalnaturewatch.org)
 
-<div flex gap-6 mt-5 items-end justify-center>
+<div flex gap-4 mt-3 mb-2 items-end justify-center>
   <figure m-0 text-center>
-    <img src="/images/gnw/discover-forests.webp" h-44 mx-auto />
-    <figcaption text-sm>Explore the world's forests</figcaption>
+    <img src="/images/gnw/horizon-1.webp" h-32 mx-auto />
+    <figcaption text-sm>Forest loss in Acre, Brazil</figcaption>
   </figure>
   <figure m-0 text-center>
-    <img src="/images/gnw/deforestation-alerts.webp" h-44 mx-auto />
-    <figcaption text-sm>See new tropical deforestation</figcaption>
+    <img src="/images/gnw/horizon-2.webp" h-32 mx-auto />
+    <figcaption text-sm>Disturbance alerts in Sulawesi Barat</figcaption>
   </figure>
   <figure m-0 text-center>
-    <img src="/images/gnw/country-stats.webp" h-44 mx-auto />
-    <figcaption text-sm>Get country statistics</figcaption>
+    <img src="/images/gnw/horizon-3.webp" h-32 mx-auto />
+    <figcaption text-sm>Brazil deforestation by president</figcaption>
   </figure>
 </div>
+
+<div text-xs opacity-70 text-center mb-2>Source: Global Nature Watch Horizon, horizon.globalnaturewatch.org</div>
 
 <DecorativeRectangle
   width="18%"
@@ -95,7 +98,7 @@ layout: default
 />
 <LogoHorPos position="bottom-left" height="24px" />
 
-<!-- Images are from globalnaturewatch.org (older Global Forest Watch interface). -->
+<!-- Images and wording are from horizon.globalnaturewatch.org (about page). The rebrand: Global Forest Watch is now Global Nature Watch; the AI preview is Global Nature Watch Horizon. -->
 
 ---
 layout: image-left
@@ -137,7 +140,7 @@ gap: 8
 
 ## The platform
 
-- Peer-reviewed data from the Land & Carbon Lab and Global Forest Watch
+- Peer-reviewed data from the Land & Carbon Lab and Global Nature Watch (formerly Global Forest Watch)
 - Served with eoAPI and STAC
 - Next.js frontend, built for accessibility and many languages
 - Every run traced, with user feedback
@@ -202,55 +205,6 @@ Screenshots: Global Nature Watch Horizon preview, tree cover loss in Para, Brazi
 -->
 
 ---
-layout: cover
-# Copernicus Sentinel-2 image of Tanezrouft Basin, Sahara
-background: /images/theme/Tanezrouft_Basin.jpg
-dim: true
-class: px-10
----
-
-# Live demo
-
-<p text-2xl mt-6>How much grassland was lost in Argentina during the last global beef price boom?</p>
-
-<DecorativeRectangle
-  width="30%"
-  height="18%"
-  zIndex=10
-  :position="{
-    bottom: '-2%',
-    left: '-1em',
-  }"
-/>
-<LogoHorNegMono position="bottom-right" />
-
-<!--
-Backup prompts to try:
-- How much tree cover was lost in Odisha in the last 5 years?
-- What can you do, and what data do you have?
-- Show me tree cover loss in Mato Grosso for EUDR compliance.
-- Now compare it with Para.
-Use a new chat thread for each one.
--->
-
----
-layout: image-right
-# Landsat 9 Image of Bangladesh Coast
-# https://unsplash.com/photos/eGGENWtikd0
-image: /images/theme/landsat9-bangladesh-coast.jpg
-class: image-narrow
----
-
-# Your turn
-
-* Pose your own questions
-* Watch the agent reason, tool call by tool call
-* See the place, dataset and timeframe it picks
-* See what happens when it cannot answer
-
-<LogoHorNegMono position="bottom-right" />
-
----
 layout: image-left
 # Landsat 9 Image of Apostle Islands, Lake Superior
 image: /images/theme/landsat9-apostle-islands-lake-superior.jpg
@@ -274,3 +228,43 @@ class: image-narrow
   }"
 />
 <LogoHorNegMono position="bottom-left" />
+
+---
+layout: cover
+# Copernicus Sentinel-2 image of Tanezrouft Basin, Sahara
+background: /images/theme/Tanezrouft_Basin.jpg
+dim: true
+class: px-10
+---
+
+# Live demo
+
+<p text-2xl mt-6>How much grassland was lost in Argentina during the last global beef price boom?</p>
+
+<div flex items-center gap-8 mt-10 text-left>
+  <QRCode data="https://horizon.globalnaturewatch.org" :width="140" :height="140" :dotsOptions="{ type: 'classy-rounded', color: 'white' }" />
+  <div>
+    <p text-xl m-0><b>Try it yourself.</b> It is live and open to everyone.</p>
+    <p text-xl mt-2 mb-0><code text-primary>horizon.globalnaturewatch.org</code></p>
+  </div>
+</div>
+
+<DecorativeRectangle
+  width="30%"
+  height="18%"
+  zIndex=10
+  :position="{
+    bottom: '-2%',
+    left: '-1em',
+  }"
+/>
+<LogoHorNegMono position="bottom-right" />
+
+<!--
+Backup prompts to try:
+- How much tree cover was lost in Odisha in the last 5 years?
+- What can you do, and what data do you have?
+- Show me tree cover loss in Mato Grosso for EUDR compliance.
+- Now compare it with Para.
+Use a new chat thread for each one.
+-->
