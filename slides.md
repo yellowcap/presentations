@@ -205,6 +205,53 @@ Screenshots: Global Nature Watch Horizon preview, tree cover loss in Para, Brazi
 -->
 
 ---
+layout: two-cols
+gap: 8
+---
+
+# Evals: test every step, not just the answer
+
+<div mt-5 />
+
+## Score each tool call
+
+- A case is a question plus what a correct answer must contain: place, dataset, dates, a figure
+- Code checks the place, dataset and dates; an LLM judge checks the prose
+- The judge never does arithmetic: numbers are compared in code
+- Expected figures fetched live from the analytics API, so cases survive data releases
+
+::right::
+
+<div mt-5 />
+
+## Gate every release
+
+- **113 active cases** in 16 groups: comparisons, time ranges, multilingual, dashboards, refusals
+- Failures land in a stage: <span v-mark.highlight.orange>retrieval, analysis, explanation, output, scope</span>
+- Three trials per case, because the agent is not deterministic
+- The headline is a **regression count** against the last release, not a mean score
+
+<LogoHorPos position="bottom-right" height="24px" />
+
+<DecorativeRectangle
+  width="30%"
+  height="20%"
+  zIndex=10
+  :position="{
+    bottom: '2%',
+    left: '-1em',
+  }"
+  :customStyle="{ mixBlendMode: 'multiply' }"
+/>
+
+<!--
+Two repos: wri/gnw-evals is the original framework (tool-by-tool scoring, LLM-as-a-judge on Claude Haiku 4.5, test cases from a Google Sheet).
+wri/gnw-gold-evals (GOLD) is the capability regression suite ported from it: every case is a versioned YAML file keyed by a content hash, every run is an immutable committed record, and before each release the candidate build is diffed against the baseline.
+GOLD does not measure answer quality; a separate programme (CHALLENGE) does that.
+Case count from cases/v2/COVERAGE.md, 2026-10-14.
+-->
+
+---
 layout: image-left
 # Landsat 9 Image of Apostle Islands, Lake Superior
 image: /images/theme/landsat9-apostle-islands-lake-superior.jpg
@@ -217,6 +264,7 @@ class: image-narrow
 * Frontend: `github.com/wri/project-zeno-next`
 * Infrastructure: `github.com/wri/project-zeno-deploy`
 * Evaluation framework: `github.com/wri/gnw-evals`
+* Release regression suite: `github.com/wri/gnw-gold-evals`
 
 <DecorativeRectangle
   width="23em"
