@@ -48,7 +48,11 @@
 .four-in-one .fio-tagline { text-align: center; font-family: 'Antarctica VAR', sans-serif; font-variation-settings: 'wdth' 24, 'wght' 640; font-weight: 700; font-size: 2rem; margin-top: 2.2rem; color: #CF3F02; }
 
 /* Not-eoAPI slide: the apps ported to the runtime, as chips. */
-.not-eoapi .ne-apps { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0.8rem 0 1.6rem; }
-.not-eoapi .ne-apps span { border: 2px solid #CF3F02; border-radius: 999px; padding: 0.25em 0.9em; font-size: 1.05rem; }
+.not-eoapi .ne-apps { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; margin: 0.9rem 0 0; }
+.not-eoapi .ne-apps b { width: 100%; font-size: 0.8rem; text-transform: uppercase; color: #CF3F02; letter-spacing: 0.04em; }
+.not-eoapi .ne-apps span { border: 2px solid #CF3F02; border-radius: 999px; padding: 0.1em 0.7em; font-size: 0.85rem; }
+.not-eoapi .ne-shot { margin: 3.2rem 0 0; }
+.not-eoapi .ne-shot img { width: 100%; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+.not-eoapi .ne-shot figcaption { font-size: 0.75rem; opacity: 0.7; margin-top: 0.4rem; text-align: center; }
 .not-eoapi .ne-ext span { background: #CF3F02; color: white; font-weight: 700; }
-.not-eoapi .ne-but { font-family: 'Antarctica VAR', sans-serif; font-variation-settings: 'wdth' 24, 'wght' 640; font-size: 1.6rem; color: #CF3F02; margin: 0.4rem 0 1.4rem; line-height: 1.2; }
+.not-eoapi .ne-but { font-family: 'Antarctica VAR', sans-serif; font-variation-settings: 'wdth' 24, 'wght' 640; font-size: 1.5rem; color: #CF3F02; margin: 0.3rem 0 0.8rem; line-height: 1.2; }

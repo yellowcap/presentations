@@ -57,8 +57,8 @@ The geo assistant's MCP runtime
 
 ---
 layout: two-cols
-leftRatio: 55
-gap: 8
+leftRatio: 50
+gap: 6
 class: not-eoapi
 ---
 
@@ -70,34 +70,35 @@ class: not-eoapi
 - **Distilled knowledge** from our projects. It has been useful until now
 - **AI first.** Agents understand the system, so they can make new agents quickly
 
-::right::
-
-<div mt-5 />
-
-## Ported so far
-
 <div class="ne-apps">
+  <b>Ported so far</b>
   <span>CDS Assistant</span>
   <span>Ask Monty</span>
   <span>Geo Assistant</span>
   <span>openEO Studio</span>
 </div>
 
-## External validation
-
 <div class="ne-apps ne-ext">
+  <b>External validation</b>
   <span>LandOS is adopting it</span>
 </div>
+
+::right::
+
+<figure class="ne-shot">
+  <img src="/images/mcp-runtime/openeo-studio.webp" alt="openEO Studio: the assistant explains a cloud detection script next to the map" />
+  <figcaption>openEO Studio: the assistant reads the code and explains it</figcaption>
+</figure>
 
 <LogoHorPos position="bottom-right" height="20px" />
 
 <DecorativeRectangle
-  width="30%"
-  height="20%"
+  width="18%"
+  height="12%"
   zIndex=10
   :position="{
-    bottom: '2%',
-    left: '-1em',
+    top: '-3%',
+    right: '-1em',
   }"
   :customStyle="{ mixBlendMode: 'multiply' }"
 />
