@@ -60,7 +60,7 @@ dim: true
 class: px-10
 ---
 
-<p class="opener">A system to build agents, distilled from <span>2 years</span> of building agents</p>
+<p class="opener"><span>Two years</span> of building agents, distilled into one system</p>
 
 <LogoHorNegMono position="bottom-right" />
 
