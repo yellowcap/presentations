@@ -1,7 +1,7 @@
 ---
 title: "Tool data, handled in middleware: the MCP runtime"
 info: |
-  How the geo assistant's MCP runtime keeps large tool results out of the model's context. Development Seed Big Tent. Daniel Wiesmann and Ciaran Sweet, Development Seed.
+  How the MCP runtime keeps large tool results out of the model's context. Development Seed Big Tent. Daniel Wiesmann and Ciaran Sweet, Development Seed.
 class: text-center
 highlighter: shiki
 # Hash URLs (#/4), so a link to any slide works on GitHub Pages. The site has one 404.html, and it belongs to slides.md.
@@ -29,7 +29,7 @@ image: /images/theme/landsat8-ord-river-australia.jpg
 # Tool data, handled in middleware
 
 ::subtitle::
-The geo assistant's MCP runtime
+developmentseed/mcp-toolset-runtime
 
 <DecorativeRectangle
   width="50%"
@@ -46,10 +46,7 @@ The geo assistant's MCP runtime
       Big Tent
     </h3>
     <h5 text-sm>
-      Daniel Wiesmann · Ciaran Sweet
-    </h5>
-    <h5 text-sm>
-      <code text-primary>Development Seed</code>
+      Ciaran Sweet · Daniel Wiesmann
     </h5>
   </div>
 </DecorativeRectangle>
