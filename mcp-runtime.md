@@ -1,0 +1,330 @@
+---
+title: "Tool data, handled in middleware: the MCP runtime"
+info: |
+  How the geo assistant's MCP runtime keeps large tool results out of the model's context. Development Seed Big Tent. Daniel Wiesmann and Ciaran Sweet, Development Seed.
+class: text-center
+highlighter: shiki
+drawings:
+  persist: false
+  enable: false
+transition: slide-left
+mdc: true
+favicon: /meta/favicon.png
+addons:
+    - slidev-addon-qrcode
+
+theme: './theme'
+themeConfig:
+  laserColor: '#CF3F02'
+  laserWidth: 8
+  laserFade: 1500
+layout: title
+# Landsat 8 image of the Ord River in Australia
+# https://unsplash.com/photos/2BThgnOYoIc
+image: /images/theme/landsat8-ord-river-australia.jpg
+---
+
+# Tool data, handled in middleware
+
+::subtitle::
+The geo assistant's MCP runtime
+
+<DecorativeRectangle
+  width="50%"
+  height="40%"
+  zIndex=20
+  :position="{
+    bottom: '2%',
+    right: '2%',
+  }"
+  :customStyle="{ mixBlendMode: 'multiply' }"
+>
+  <div w-full h-full relative flex flex-col items-end justify-end p-4 text-white text-right>
+    <h3 text-3xl>
+      Big Tent
+    </h3>
+    <h5 text-sm>
+      Daniel Wiesmann · Ciaran Sweet
+    </h5>
+    <h5 text-sm>
+      <code text-primary>Development Seed</code>
+    </h5>
+  </div>
+</DecorativeRectangle>
+<LogoHorPos position="top-left" height="24px" />
+
+---
+layout: two-cols
+gap: 8
+---
+
+# Big tool results, small context
+
+<div mt-5 />
+
+## The problem
+
+- A tool returns a polygon or a list of places: **thousands of tokens**
+- The model must copy it into the next call, and **can change it**
+- Afterwards, it is hard to tell what a call ran on
+
+::right::
+
+<div mt-5 />
+
+## The idea
+
+- Keep large values in **State**, outside the model's context
+- Give the model a short <span class="ref-pill">@reference</span>
+- Swap the real value back in **before the call goes out**
+- Do this once, in the client, for **any** MCP server
+
+<LogoHorPos position="bottom-right" height="24px" />
+
+<DecorativeRectangle
+  width="30%"
+  height="20%"
+  zIndex=10
+  :position="{
+    bottom: '2%',
+    left: '-1em',
+  }"
+  :customStyle="{ mixBlendMode: 'multiply' }"
+/>
+
+<!--
+Two jobs in the middleware: Split publishes a large result to State, Inject consumes a reference and puts the value back.
+Next: six scenes with one question. Each scene loops by itself.
+-->
+
+---
+layout: default
+class: mcp-scene
+---
+
+<div class="scene-n">Scene 1 of 6</div>
+
+# The user asks, the agent calls AOI Search
+
+<MiddlewareFlow :scene="1" />
+
+<p class="scene-cap">The agent looks up the Taj Mahal. There is no reference yet, so the call goes straight to the tool.</p>
+
+<div class="legend"><span class="ref-pill">@ref</span> reference · <img src="/images/mcp-runtime/poly.svg" /> area data · <img src="/images/mcp-runtime/pts.svg" /> places data</div>
+
+<LogoHorPos position="bottom-right" height="20px" />
+
+<!--
+Question: "How many coffee shops near the Taj Mahal?" AOI Search is one box here. In the real toolset it is two tools: get_place, then get_search_area.
+-->
+
+---
+layout: default
+class: mcp-scene
+---
+
+<div class="scene-n">Scene 2 of 6</div>
+
+# Split: the data goes to State, the agent gets <span class="ref-pill">@taj_mahal</span>
+
+<MiddlewareFlow :scene="2" />
+
+<p class="scene-cap">The polygon is big. Split publishes it to State and gives the agent a short reference. The model never sees the polygon.</p>
+
+<div class="legend"><span class="ref-pill">@ref</span> reference · <img src="/images/mcp-runtime/poly.svg" /> area data · <img src="/images/mcp-runtime/pts.svg" /> places data</div>
+
+<LogoHorPos position="bottom-right" height="20px" />
+
+<!--
+Split publishes. The agent now holds @taj_mahal, about ten tokens instead of the full geometry.
+-->
+
+---
+layout: default
+class: mcp-scene
+---
+
+<div class="scene-n">Scene 3 of 6</div>
+
+# The agent passes on only <span class="ref-pill">@taj_mahal</span>
+
+<MiddlewareFlow :scene="3" />
+
+<p class="scene-cap">To find coffee shops, the agent writes the reference into the next call. It does not copy the polygon.</p>
+
+<div class="legend"><span class="ref-pill">@ref</span> reference · <img src="/images/mcp-runtime/poly.svg" /> area data · <img src="/images/mcp-runtime/pts.svg" /> places data</div>
+
+<LogoHorPos position="bottom-right" height="20px" />
+
+<!--
+The model chooses which value to use. It names it, it does not write it.
+-->
+
+---
+layout: default
+class: mcp-scene
+---
+
+<div class="scene-n">Scene 4 of 6</div>
+
+# Inject swaps <span class="ref-pill">@taj_mahal</span> for the data
+
+<MiddlewareFlow :scene="4" />
+
+<p class="scene-cap">Before the call goes out, Inject reads State and puts the real polygon in. The tool gets a plain value.</p>
+
+<div class="legend"><span class="ref-pill">@ref</span> reference · <img src="/images/mcp-runtime/poly.svg" /> area data · <img src="/images/mcp-runtime/pts.svg" /> places data</div>
+
+<LogoHorPos position="bottom-right" height="20px" />
+
+<!--
+Inject consumes. Places Search never sees a reference and never sees State.
+-->
+
+---
+layout: default
+class: mcp-scene
+---
+
+<div class="scene-n">Scene 5 of 6</div>
+
+# Split again: the places go to State, the agent gets <span class="ref-pill">@coffee_shops</span>
+
+<MiddlewareFlow :scene="5" />
+
+<p class="scene-cap">The places list is big too. It goes to State. The agent gets one more reference.</p>
+
+<div class="legend"><span class="ref-pill">@ref</span> reference · <img src="/images/mcp-runtime/poly.svg" /> area data · <img src="/images/mcp-runtime/pts.svg" /> places data</div>
+
+<LogoHorPos position="bottom-right" height="20px" />
+
+<!--
+Same mechanism, second tool. Nothing in the tool knows about it.
+-->
+
+---
+layout: default
+class: mcp-scene
+---
+
+<div class="scene-n">Scene 6 of 6</div>
+
+# The agent inspects <span class="ref-pill">@coffee_shops</span> and answers
+
+<MiddlewareFlow :scene="6" />
+
+<p class="scene-cap">The agent can look inside a reference when it needs to. It counts the places without reading every one, and answers.</p>
+
+<div class="legend"><span class="ref-pill">@ref</span> reference · <img src="/images/mcp-runtime/poly.svg" /> area data · <img src="/images/mcp-runtime/pts.svg" /> places data</div>
+
+<LogoHorPos position="bottom-right" height="20px" />
+
+<!--
+A reference is not a black box: the agent can inspect it. 12 is a sample number.
+-->
+
+---
+layout: two-cols
+leftRatio: 55
+gap: 6
+---
+
+# In the code
+
+<div mt-3 />
+
+What the model sees in the real geo assistant:
+
+```text
+get_search_area(place="@state:duckdb-analyst/get_place/place")
+→ Search area created: 1.0 km around Taj Mahal.
+  [state updated: duckdb-analyst/get_search_area/search_area]
+
+places_within_area(category="cafe",
+  area="@state:duckdb-analyst/get_search_area/search_area")
+```
+
+A key is `<toolset>/<tool>/<field>`: the only thing two toolsets share.
+
+::right::
+
+<div mt-12 />
+
+| In the story | In `mcp_state` |
+| --- | --- |
+| Split | `StateCaptureMiddleware` |
+| Inject | `bind_injected` |
+| `@taj_mahal` | `@state:<key>` |
+| State | `tool_state` |
+| inspect | `inspect_state` |
+
+`NotAuthored` on a parameter: the model **cannot** write the value, only a reference. So it cannot invent a polygon.
+
+<LogoHorPos position="bottom-right" height="20px" />
+
+<!--
+Real names from developmentseed/mcp-toolsets-runtime (mcp_state) and developmentseed/geo-assistant-mcp-toolset (duckdb-analyst toolset).
+get_place publishes duckdb-analyst/get_place/place; get_search_area and places_within_area take NotAuthored parameters.
+The Taj Mahal example and the counts are illustrative.
+-->
+
+---
+layout: image-left
+# Landsat 9 image of Apostle Islands, Lake Superior
+# https://unsplash.com/photos/j7HqdQqn7Jo
+image: /images/theme/landsat9-apostle-islands-lake-superior.jpg
+class: image-narrow
+---
+
+# Why it matters
+
+* **Modular.** Each toolset is a standalone MCP server. It sees only plain values: no references, no State
+* **Any client.** The same servers work in Claude.ai or ChatGPT, just without the savings
+* **Not a black box.** The agent can inspect a value, also as it was at an earlier turn
+* **Traceable.** Each injected value leaves a receipt that names the tool that made it
+
+<div mt-4 text-sm font-mono>
+
+github.com/developmentseed/mcp-toolsets-runtime<br>
+github.com/developmentseed/geo-assistant-mcp-toolset
+
+</div>
+
+<DecorativeRectangle
+  width="23em"
+  height="6rem"
+  zIndex=10
+  :position="{
+    bottom: '2%',
+    right: '-1em',
+  }"
+/>
+<LogoHorNegMono position="bottom-left" />
+
+<!--
+All of this is client-side work. Unmodified third-party MCP servers still take part: large returns are captured on size, and structured parameters accept an @state handle.
+Read more: docs/SESSION-STATE.md in mcp-toolsets-runtime.
+-->
+
+---
+layout: cover
+# Copernicus Sentinel-2 image of Tanezrouft Basin, Sahara
+background: /images/theme/Tanezrouft_Basin.jpg
+dim: true
+class: px-10
+---
+
+# Thank you
+
+<p text-2xl mt-6>Daniel Wiesmann · Ciaran Sweet</p>
+
+<div flex items-center gap-8 mt-10 text-left>
+  <QRCode data="https://github.com/developmentseed/mcp-toolsets-runtime" :width="140" :height="140" :dotsOptions="{ type: 'classy-rounded', color: 'white' }" />
+  <div>
+    <p text-xl m-0><b>Try it.</b> The runtime is open source.</p>
+    <p text-xl mt-2 mb-0><code text-primary>developmentseed/mcp-toolsets-runtime</code></p>
+  </div>
+</div>
+
+<LogoHorNegMono position="bottom-right" />
+

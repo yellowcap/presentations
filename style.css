@@ -1,0 +1,16 @@
+/* Shared classes for mcp-runtime.md. Slide <style> blocks are scoped to one slide. */
+.ref-pill {
+  display: inline-block;
+  background: #CF3F02;
+  color: white;
+  border-radius: 999px;
+  padding: 0 0.55em;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.85em;
+  line-height: 1.5;
+}
+.mcp-scene h1 { font-size: 1.7rem !important; margin-bottom: 0.4rem !important; }
+.mcp-scene .scene-n { font-family: 'Roboto Mono', monospace; font-size: 0.75rem; opacity: 0.6; }
+.mcp-scene .scene-cap { font-size: 1.1rem; margin: 0.4rem 0 0.3rem; }
+.mcp-scene .legend { font-size: 0.75rem; opacity: 0.75; display: flex; align-items: center; gap: 0.4em; }
+.mcp-scene .legend img { height: 1.1em; display: inline; }

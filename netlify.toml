@@ -1,6 +1,6 @@
 [build]
 publish = "dist"
-command = "npm run build"
+command = "npm run build && npm run build:mcp-runtime -- --base /mcp-runtime/"
 
 [build.environment]
 NODE_VERSION = "20"
@@ -8,6 +8,11 @@ NODE_VERSION = "20"
 [[redirects]]
 from = "/.well-known/*"
 to = "/.well-known/:splat"
+status = 200
+
+[[redirects]]
+from = "/mcp-runtime/*"
+to = "/mcp-runtime/index.html"
 status = 200
 
 [[redirects]]
