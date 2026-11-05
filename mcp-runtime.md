@@ -56,6 +56,53 @@ The geo assistant's MCP runtime
 <LogoHorPos position="top-left" height="24px" />
 
 ---
+layout: two-cols
+leftRatio: 55
+gap: 8
+class: not-eoapi
+---
+
+# This is not eoAPI
+
+<div mt-5 />
+
+- **Agents move fast.** This can be obsolete in 6 months
+- **Distilled knowledge** from our projects. It has been useful until now
+- **AI first.** Agents understand the system, so they can make new agents quickly
+
+::right::
+
+<div mt-5 />
+
+## Ported so far
+
+<div class="ne-apps">
+  <span>CDS Assistant</span>
+  <span>Ask Monty</span>
+  <span>Geo Assistant</span>
+  <span>openEO Studio</span>
+</div>
+
+## External validation
+
+<div class="ne-apps ne-ext">
+  <span>LandOS is adopting it</span>
+</div>
+
+<LogoHorPos position="bottom-right" height="20px" />
+
+<DecorativeRectangle
+  width="30%"
+  height="20%"
+  zIndex=10
+  :position="{
+    bottom: '2%',
+    left: '-1em',
+  }"
+  :customStyle="{ mixBlendMode: 'multiply' }"
+/>
+
+---
 layout: default
 class: four-in-one
 ---
