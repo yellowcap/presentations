@@ -350,8 +350,6 @@ class: tag-team
   </div>
 </div>
 
-<p class="tt-foot">Two people, each with a coding agent, meeting in pull requests</p>
-
 <LogoHorPos position="bottom-right" height="20px" />
 
 <!--
