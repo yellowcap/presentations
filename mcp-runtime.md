@@ -309,6 +309,45 @@ Read more: docs/SESSION-STATE.md in mcp-toolsets-runtime.
 -->
 
 ---
+layout: default
+class: tag-team
+---
+
+# Tag team
+
+<div class="tt-court">
+  <div class="tt-player tt-ciaran">
+    <div class="tt-avatar">CS</div>
+    <div class="tt-name">Ciaran</div>
+    <div class="tt-role">builds the runtime</div>
+    <div class="tt-stat"><b>81</b> PRs merged</div>
+  </div>
+
+  <div class="tt-middle">
+    <div class="tt-ball-track"><span class="tt-ball">@ref</span></div>
+    <div class="tt-pass tt-right"><span>v0.8.0: a name is the contract</span><i>→</i><span>toolset moves to <code>NotAuthored</code></span></div>
+    <div class="tt-pass tt-left"><span>"ask the user" in any toolset</span><i>←</i><span>interrupt tool</span></div>
+    <div class="tt-pass tt-right"><span>v0.12.0 released</span><i>→</i><span>toolset upgrades two days later</span></div>
+  </div>
+
+  <div class="tt-player tt-daniel">
+    <div class="tt-avatar">DW</div>
+    <div class="tt-name">Daniel</div>
+    <div class="tt-role">builds the geo assistant on it</div>
+    <div class="tt-stat"><b>8</b> toolset PRs · <b>3</b> runtime PRs</div>
+  </div>
+</div>
+
+<p class="tt-foot">100 days · 49 releases · two people, each with a coding agent, meeting in pull requests</p>
+
+<LogoHorPos position="bottom-right" height="20px" />
+
+<!--
+mcp-toolsets-runtime (Ciaran) and geo-assistant-mcp-toolset (Daniel), 28 July to 5 November 2026. Merged PRs only.
+Hand-offs: runtime v0.8.0 (#99, 25 Aug) and toolset #1 the same day; Daniel's interrupt tool (#147, 18 Sep) and Ciaran's toolset questions (#201, 20 Oct); runtime v0.12.0 (20 Oct) and toolset #8 (22 Oct).
+-->
+
+---
 layout: cover
 # Copernicus Sentinel-2 image of Tanezrouft Basin, Sahara
 background: /images/theme/Tanezrouft_Basin.jpg

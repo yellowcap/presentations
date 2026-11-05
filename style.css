@@ -14,3 +14,32 @@
 .mcp-scene .scene-cap { font-size: 1.1rem; margin: 0.4rem 0 0.3rem; }
 .mcp-scene .legend { font-size: 0.75rem; opacity: 0.75; display: flex; align-items: center; gap: 0.4em; }
 .mcp-scene .legend img { height: 1.1em; display: inline; }
+
+/* Tag-team slide: two player cards and a reference pill that bounces between them. */
+.tag-team .tt-court { display: grid; grid-template-columns: 1fr 1.7fr 1fr; gap: 1.2rem; align-items: center; margin-top: 1.2rem; }
+.tag-team .tt-player { text-align: center; padding: 1rem 0.6rem; border-radius: 8px; border: 2px solid; }
+.tag-team .tt-ciaran { border-color: #2E86AB; }
+.tag-team .tt-daniel { border-color: #CF3F02; }
+.tag-team .tt-avatar { width: 4.2rem; height: 4.2rem; margin: 0 auto 0.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-family: 'Roboto Condensed', sans-serif; font-size: 1.6rem; font-weight: 700; animation: tt-hop 1.8s ease-in-out infinite; }
+.tag-team .tt-ciaran .tt-avatar { background: #2E86AB; }
+.tag-team .tt-daniel .tt-avatar { background: #CF3F02; animation-delay: 0.9s; }
+.tag-team .tt-name { font-family: 'Roboto Condensed', sans-serif; font-size: 1.4rem; font-weight: 700; }
+.tag-team .tt-role { font-size: 0.85rem; opacity: 0.75; }
+.tag-team .tt-stat { margin-top: 0.5rem; font-size: 0.9rem; }
+.tag-team .tt-stat b { font-size: 1.3rem; }
+.tag-team .tt-ball-track { position: relative; height: 2.2rem; margin-bottom: 0.6rem; }
+.tag-team .tt-ball { position: absolute; top: 0; left: 0; background: #CF3F02; color: white; border-radius: 999px; padding: 0.1em 0.6em; font-family: 'Roboto Mono', monospace; font-size: 0.9rem; animation: tt-volley 1.8s ease-in-out infinite alternate; }
+.tag-team .tt-pass { display: grid; grid-template-columns: 1fr 1.6rem 1fr; gap: 0.4rem; align-items: center; font-size: 0.8rem; margin: 0.45rem 0; }
+.tag-team .tt-pass span:first-child { text-align: right; }
+.tag-team .tt-pass i { font-style: normal; font-size: 1.3rem; text-align: center; color: #CF3F02; }
+.tag-team .tt-foot { text-align: center; font-size: 0.95rem; margin-top: 1.4rem; opacity: 0.8; }
+@keyframes tt-volley {
+  0% { left: 0; transform: translateY(0); }
+  50% { transform: translateY(-0.9rem) rotate(8deg); }
+  100% { left: calc(100% - 4.2rem); transform: translateY(0); }
+}
+@keyframes tt-hop {
+  0%, 100% { transform: translateY(0); }
+  15% { transform: translateY(-0.5rem); }
+  30% { transform: translateY(0); }
+}
