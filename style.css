@@ -56,3 +56,4 @@
 .not-eoapi .ne-apps { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0.8rem 0 1.6rem; }
 .not-eoapi .ne-apps span { border: 2px solid #CF3F02; border-radius: 999px; padding: 0.25em 0.9em; font-size: 1.05rem; }
 .not-eoapi .ne-ext span { background: #CF3F02; color: white; font-weight: 700; }
+.not-eoapi .ne-but { font-family: 'Antarctica VAR', sans-serif; font-variation-settings: 'wdth' 24, 'wght' 640; font-size: 1.6rem; color: #CF3F02; margin: 0.4rem 0 1.4rem; line-height: 1.2; }

@@ -64,7 +64,7 @@ class: not-eoapi
 
 # This is not eoAPI
 
-<div mt-5 />
+<p class="ne-but">…but right now, it makes creating agents easy</p>
 
 - **Agents move fast.** This can be obsolete in 6 months
 - **Distilled knowledge** from our projects. It has been useful until now
