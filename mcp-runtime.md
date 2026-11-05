@@ -56,6 +56,59 @@ The geo assistant's MCP runtime
 <LogoHorPos position="top-left" height="24px" />
 
 ---
+layout: default
+class: four-in-one
+---
+
+# Four things in one
+
+<div class="fio-grid">
+  <div class="fio-tile">
+    <div class="fio-n">1</div>
+    <div class="fio-what">Python functions become <b>MCP servers</b></div>
+    <code>mcp_runtime</code>
+  </div>
+  <div class="fio-tile">
+    <div class="fio-n">2</div>
+    <div class="fio-what">An <b>agent</b> that handles state and provenance</div>
+    <code>mcp_agent · mcp_state</code>
+  </div>
+  <div class="fio-tile">
+    <div class="fio-n">3</div>
+    <div class="fio-what">A <b>REST API</b> hooked into the agent</div>
+    <code>mcp_agent_api</code>
+  </div>
+  <div class="fio-tile">
+    <div class="fio-n">4</div>
+    <div class="fio-what">A default <b>web frontend</b></div>
+    <code>the bundled web client</code>
+  </div>
+</div>
+
+<p class="fio-tagline">Write your tools. Get everything else included.</p>
+
+<LogoHorPos position="bottom-right" height="20px" />
+
+<DecorativeRectangle
+  width="18%"
+  height="12%"
+  zIndex=10
+  :position="{
+    top: '-3%',
+    right: '-1em',
+  }"
+  :customStyle="{ mixBlendMode: 'multiply' }"
+/>
+
+<!--
+One package, mcp-toolsets-runtime, with extras: [state], [agent], [api].
+1. A toolset is a list of LangChain @tool functions; mcp-serve serves them over MCP. (Plain functions without @tool: issue #195, open.)
+2. mcp_agent drives the tools, with mcp_state wired in: session state, inspect_state, receipts.
+3. mcp_agent_api: the agent over HTTP, as AG-UI events plus read routes.
+4. The [api] extra also serves a web chat: transcript, tool views, the state panel and receipts.
+-->
+
+---
 layout: two-cols
 gap: 8
 ---

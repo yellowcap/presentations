@@ -43,3 +43,11 @@
   15% { transform: translateY(-0.5rem); }
   30% { transform: translateY(0); }
 }
+
+/* Four-in-one slide: what the runtime package gives you. */
+.four-in-one .fio-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2rem; }
+.four-in-one .fio-tile { border: 2px solid #CF3F02; border-radius: 8px; padding: 1rem 0.8rem; display: flex; flex-direction: column; gap: 0.6rem; }
+.four-in-one .fio-n { width: 2.2rem; height: 2.2rem; border-radius: 50%; background: #CF3F02; color: white; display: flex; align-items: center; justify-content: center; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; font-size: 1.2rem; }
+.four-in-one .fio-what { font-size: 1.05rem; line-height: 1.35; flex-grow: 1; }
+.four-in-one .fio-tile code { font-size: 0.75rem; align-self: flex-start; }
+.four-in-one .fio-tagline { text-align: center; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; font-size: 2rem; margin-top: 2.2rem; color: #CF3F02; }
