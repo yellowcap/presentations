@@ -4,6 +4,8 @@ info: |
   How the geo assistant's MCP runtime keeps large tool results out of the model's context. Development Seed Big Tent. Daniel Wiesmann and Ciaran Sweet, Development Seed.
 class: text-center
 highlighter: shiki
+# Hash URLs (#/4), so a link to any slide works on GitHub Pages. The site has one 404.html, and it belongs to slides.md.
+routerMode: hash
 drawings:
   persist: false
   enable: false

@@ -131,6 +131,6 @@ To show a deck on your computer, give its file name:
 pnpm slidev mcp-runtime.md
 ```
 
-The build makes the main deck from `slides.md`. Then `pnpm run build:mcp-runtime` makes the second deck in `dist/mcp-runtime/`. The deploy configuration (GitHub Pages, Netlify and Vercel) runs the two builds. The second deck is at the path `/mcp-runtime/`.
+The build makes the main deck from `slides.md`. Then `pnpm run build:mcp-runtime` makes the second deck in `dist/mcp-runtime/`. The deploy configuration (GitHub Pages, Netlify and Vercel) runs the two builds. The second deck is at the path `/mcp-runtime/`. It uses hash URLs, for example `/mcp-runtime/#/4`. Thus a link to a slide works on GitHub Pages.
 
 The `MiddlewareFlow` component (`components/MiddlewareFlow.vue`) shows one scene of the walkthrough. Each animation runs in a loop. It does not need a click.
