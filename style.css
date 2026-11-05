@@ -20,9 +20,9 @@
 .tag-team .tt-player { text-align: center; padding: 1rem 0.6rem; border-radius: 8px; border: 2px solid; }
 .tag-team .tt-ciaran { border-color: #2E86AB; }
 .tag-team .tt-daniel { border-color: #CF3F02; }
-.tag-team .tt-avatar { width: 9rem; height: 9rem; margin: 0 auto 0.6rem; border-radius: 50%; object-fit: cover; display: block; animation: tt-hop 1.8s ease-in-out infinite; }
+.tag-team .tt-avatar { width: 9rem; height: 9rem; margin: 0 auto 0.6rem; border-radius: 50%; object-fit: cover; display: block; animation: tt-hop 3.6s ease-in-out infinite; }
 .tag-team .tt-ciaran .tt-avatar { object-position: 85% 50%; border: 4px solid #2E86AB; }
-.tag-team .tt-daniel .tt-avatar { object-position: 62% 50%; border: 4px solid #CF3F02; animation-delay: 0.9s; }
+.tag-team .tt-daniel .tt-avatar { object-position: 62% 50%; border: 4px solid #CF3F02; animation-delay: -1.8s; }
 .tag-team .tt-name { font-family: 'Antarctica VAR', sans-serif; font-variation-settings: 'wdth' 24, 'wght' 640; font-size: 1.4rem; font-weight: 700; }
 .tag-team .tt-role { font-size: 0.85rem; opacity: 0.75; }
 .tag-team .tt-ball-track { position: relative; height: 2.2rem; margin-bottom: 0.6rem; }
@@ -32,10 +32,11 @@
   50% { transform: translateY(-0.9rem) rotate(8deg); }
   100% { left: calc(100% - 4.2rem); transform: translateY(0); }
 }
+/* One rally is 3.6s: the ball reaches Ciaran at 0s and Daniel at 1.8s.
+   Each avatar hops once per rally, at the moment the ball reaches it. */
 @keyframes tt-hop {
-  0%, 100% { transform: translateY(0); }
-  15% { transform: translateY(-0.5rem); }
-  30% { transform: translateY(0); }
+  0%, 100% { transform: translateY(-0.6rem); }
+  10%, 90% { transform: translateY(0); }
 }
 
 /* Four-in-one slide: what the runtime package gives you. */

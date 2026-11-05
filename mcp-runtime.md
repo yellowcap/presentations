@@ -361,7 +361,7 @@ class: tag-team
   <div class="tt-player tt-daniel">
     <img class="tt-avatar" src="/images/mcp-runtime/daniel-wiesmann.jpg" alt="Daniel Wiesmann" />
     <div class="tt-name">Daniel</div>
-    <div class="tt-role">builds the geo assistant on it</div>
+    <div class="tt-role">contributes ideas &amp; builds on it</div>
   </div>
 </div>
 
