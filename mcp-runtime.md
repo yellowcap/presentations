@@ -53,6 +53,18 @@ developmentseed/mcp-toolsets-runtime
 <LogoHorPos position="top-left" height="24px" />
 
 ---
+layout: cover
+# Sentinel-2A image of the Southern Tibetan Plateau
+background: /images/theme/sentinel2a-southern-tibetan-plateau.jpg
+dim: true
+class: px-10
+---
+
+<p class="opener">A system to build agents, distilled from <span>2 years</span> of building agents</p>
+
+<LogoHorNegMono position="bottom-right" />
+
+---
 layout: two-cols
 leftRatio: 50
 gap: 6
@@ -113,7 +125,8 @@ class: four-in-one
     <div class="fio-what">Python functions become <b>MCP servers</b></div>
     <code>mcp_runtime</code>
   </div>
-  <div class="fio-tile">
+  <div class="fio-tile fio-focus">
+    <div class="fio-badge">Today</div>
     <div class="fio-n">2</div>
     <div class="fio-what">An <b>agent</b> that handles state and provenance</div>
     <code>mcp_agent · mcp_state</code>
@@ -160,6 +173,8 @@ layout: two-cols
 gap: 8
 ---
 
+<div class="focus-kicker">Today: box 2, the agent with state and provenance</div>
+
 # Big tool results, small context
 
 <div mt-5 />
@@ -204,7 +219,7 @@ layout: default
 class: mcp-scene
 ---
 
-<div class="scene-n">Scene 1 of 6</div>
+<div class="scene-n">Box 2 · Scene 1 of 6</div>
 
 # The user asks, the agent calls AOI Search
 
@@ -225,7 +240,7 @@ layout: default
 class: mcp-scene
 ---
 
-<div class="scene-n">Scene 2 of 6</div>
+<div class="scene-n">Box 2 · Scene 2 of 6</div>
 
 # Split: the data goes to State, the agent gets <span class="ref-pill">@taj_mahal</span>
 
@@ -246,7 +261,7 @@ layout: default
 class: mcp-scene
 ---
 
-<div class="scene-n">Scene 3 of 6</div>
+<div class="scene-n">Box 2 · Scene 3 of 6</div>
 
 # The agent passes on only <span class="ref-pill">@taj_mahal</span>
 
@@ -267,7 +282,7 @@ layout: default
 class: mcp-scene
 ---
 
-<div class="scene-n">Scene 4 of 6</div>
+<div class="scene-n">Box 2 · Scene 4 of 6</div>
 
 # Inject swaps <span class="ref-pill">@taj_mahal</span> for the data
 
@@ -288,7 +303,7 @@ layout: default
 class: mcp-scene
 ---
 
-<div class="scene-n">Scene 5 of 6</div>
+<div class="scene-n">Box 2 · Scene 5 of 6</div>
 
 # Split again: the places go to State, the agent gets <span class="ref-pill">@coffee_shops</span>
 
@@ -309,7 +324,7 @@ layout: default
 class: mcp-scene
 ---
 
-<div class="scene-n">Scene 6 of 6</div>
+<div class="scene-n">Box 2 · Scene 6 of 6</div>
 
 # The agent inspects <span class="ref-pill">@coffee_shops</span> and answers
 

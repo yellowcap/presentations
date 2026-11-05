@@ -3,7 +3,8 @@
 // The Excalidraw drawing is the background; an overlay SVG with the same
 // viewBox outlines the active boxes and moves chips along the lines.
 // Every animation loops on its own, so a slide never needs a click.
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
+import { onSlideEnter } from '@slidev/client'
 
 const props = withDefaults(defineProps<{
   scene: number
@@ -93,6 +94,11 @@ const SCENES: Record<number, Scene> = {
 }
 
 const scene = computed(() => SCENES[props.scene])
+
+// Neighbouring slides stay mounted, so their loops would already be mid-way.
+// Start the SVG clock from zero each time this slide is shown.
+const overlay = ref<SVGSVGElement>()
+onSlideEnter(() => overlay.value?.setCurrentTime(0))
 const dur = computed(() => `${props.cycle}s`)
 
 const MONO = 14.4 // character width at font-size 24, Roboto Mono
@@ -123,7 +129,7 @@ function heldX(i: number) {
 <template>
   <div class="mw-flow relative w-full" :style="{ aspectRatio: `${W} / ${H + 40}` }">
     <img src="/images/mcp-runtime/middleware-flow.svg" alt="" class="absolute left-0 top-0 w-full" :style="{ height: `${(H / (H + 40)) * 100}%` }" />
-    <svg class="absolute inset-0 w-full h-full" :viewBox="`0 0 ${W} ${H + 40}`" role="img"
+    <svg ref="overlay" class="absolute inset-0 w-full h-full" :viewBox="`0 0 ${W} ${H + 40}`" role="img"
       :aria-label="`Middleware flow, scene ${props.scene}`">
       <defs>
         <symbol id="mw-poly" viewBox="0 0 40 28">

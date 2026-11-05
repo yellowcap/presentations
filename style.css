@@ -56,3 +56,14 @@
 .not-eoapi .ne-shot figcaption { font-size: 0.75rem; opacity: 0.7; margin-top: 0.4rem; text-align: center; }
 .not-eoapi .ne-ext span { background: #CF3F02; color: white; font-weight: 700; }
 .not-eoapi .ne-but { font-family: 'Antarctica VAR', sans-serif; font-variation-settings: 'wdth' 24, 'wght' 640; font-size: 1.5rem; color: #CF3F02; margin: 0.3rem 0 0.8rem; line-height: 1.2; }
+
+/* Opener slide: one tagline. */
+.opener { font-family: 'Antarctica VAR', sans-serif; font-variation-settings: 'wdth' 24, 'wght' 640; font-size: 3.4rem; line-height: 1.1; max-width: 46rem; }
+.opener span { color: #CF3F02; }
+
+/* Box 2 is the part the walkthrough explains. */
+.four-in-one .fio-tile { position: relative; transition: none; }
+.four-in-one .fio-tile:not(.fio-focus) { opacity: 0.45; }
+.four-in-one .fio-focus { background: rgba(207, 63, 2, 0.08); border-width: 3px; transform: scale(1.06); }
+.four-in-one .fio-badge { position: absolute; top: -0.8rem; right: 0.6rem; background: #CF3F02; color: white; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.1em 0.6em; border-radius: 999px; }
+.focus-kicker { display: inline-block; background: #CF3F02; color: white; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.15em 0.7em; border-radius: 999px; margin-bottom: 0.4rem; }
