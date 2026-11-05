@@ -20,10 +20,10 @@
 .tag-team .tt-player { text-align: center; padding: 1rem 0.6rem; border-radius: 8px; border: 2px solid; }
 .tag-team .tt-ciaran { border-color: #2E86AB; }
 .tag-team .tt-daniel { border-color: #CF3F02; }
-.tag-team .tt-avatar { width: 4.2rem; height: 4.2rem; margin: 0 auto 0.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-family: 'Antarctica VAR', sans-serif; font-size: 1.6rem; font-weight: 700; animation: tt-hop 1.8s ease-in-out infinite; }
+.tag-team .tt-avatar { width: 4.2rem; height: 4.2rem; margin: 0 auto 0.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-family: 'Antarctica VAR', sans-serif; font-variation-settings: 'wdth' 24, 'wght' 640; font-size: 1.6rem; font-weight: 700; animation: tt-hop 1.8s ease-in-out infinite; }
 .tag-team .tt-ciaran .tt-avatar { background: #2E86AB; }
 .tag-team .tt-daniel .tt-avatar { background: #CF3F02; animation-delay: 0.9s; }
-.tag-team .tt-name { font-family: 'Antarctica VAR', sans-serif; font-size: 1.4rem; font-weight: 700; }
+.tag-team .tt-name { font-family: 'Antarctica VAR', sans-serif; font-variation-settings: 'wdth' 24, 'wght' 640; font-size: 1.4rem; font-weight: 700; }
 .tag-team .tt-role { font-size: 0.85rem; opacity: 0.75; }
 .tag-team .tt-stat { margin-top: 0.5rem; font-size: 0.9rem; }
 .tag-team .tt-stat b { font-size: 1.3rem; }
@@ -47,7 +47,7 @@
 /* Four-in-one slide: what the runtime package gives you. */
 .four-in-one .fio-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2rem; }
 .four-in-one .fio-tile { border: 2px solid #CF3F02; border-radius: 8px; padding: 1rem 0.8rem; display: flex; flex-direction: column; gap: 0.6rem; }
-.four-in-one .fio-n { width: 2.2rem; height: 2.2rem; border-radius: 50%; background: #CF3F02; color: white; display: flex; align-items: center; justify-content: center; font-family: 'Antarctica VAR', sans-serif; font-weight: 700; font-size: 1.2rem; }
+.four-in-one .fio-n { width: 2.2rem; height: 2.2rem; border-radius: 50%; background: #CF3F02; color: white; display: flex; align-items: center; justify-content: center; font-family: 'Antarctica VAR', sans-serif; font-variation-settings: 'wdth' 24, 'wght' 640; font-weight: 700; font-size: 1.2rem; }
 .four-in-one .fio-what { font-size: 1.05rem; line-height: 1.35; flex-grow: 1; }
 .four-in-one .fio-tile code { font-size: 0.75rem; align-self: flex-start; }
-.four-in-one .fio-tagline { text-align: center; font-family: 'Antarctica VAR', sans-serif; font-weight: 700; font-size: 2rem; margin-top: 2.2rem; color: #CF3F02; }
+.four-in-one .fio-tagline { text-align: center; font-family: 'Antarctica VAR', sans-serif; font-variation-settings: 'wdth' 24, 'wght' 640; font-weight: 700; font-size: 2rem; margin-top: 2.2rem; color: #CF3F02; }
