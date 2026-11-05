@@ -326,51 +326,6 @@ A reference is not a black box: the agent can inspect it. 12 is a sample number.
 -->
 
 ---
-layout: two-cols
-leftRatio: 55
-gap: 6
----
-
-# In the code
-
-<div mt-3 />
-
-What the model sees in the real geo assistant:
-
-```text
-get_search_area(place="@state:duckdb-analyst/get_place/place")
-→ Search area created: 1.0 km around Taj Mahal.
-  [state updated: duckdb-analyst/get_search_area/search_area]
-
-places_within_area(category="cafe",
-  area="@state:duckdb-analyst/get_search_area/search_area")
-```
-
-A key is `<toolset>/<tool>/<field>`: the only thing two toolsets share.
-
-::right::
-
-<div mt-12 />
-
-| In the story | In `mcp_state` |
-| --- | --- |
-| Split | `StateCaptureMiddleware` |
-| Inject | `bind_injected` |
-| `@taj_mahal` | `@state:<key>` |
-| State | `tool_state` |
-| inspect | `inspect_state` |
-
-`NotAuthored` on a parameter: the model **cannot** write the value, only a reference. So it cannot invent a polygon.
-
-<LogoHorPos position="bottom-right" height="20px" />
-
-<!--
-Real names from developmentseed/mcp-toolsets-runtime (mcp_state) and developmentseed/geo-assistant-mcp-toolset (duckdb-analyst toolset).
-get_place publishes duckdb-analyst/get_place/place; get_search_area and places_within_area take NotAuthored parameters.
-The Taj Mahal example and the counts are illustrative.
--->
-
----
 layout: image-left
 # Landsat 9 image of Apostle Islands, Lake Superior
 # https://unsplash.com/photos/j7HqdQqn7Jo
@@ -417,28 +372,23 @@ class: tag-team
 
 <div class="tt-court">
   <div class="tt-player tt-ciaran">
-    <div class="tt-avatar">CS</div>
+    <img class="tt-avatar" src="/images/mcp-runtime/ciaran-sweet.jpg" alt="Ciaran Sweet" />
     <div class="tt-name">Ciaran</div>
     <div class="tt-role">builds the runtime</div>
-    <div class="tt-stat"><b>81</b> PRs merged</div>
   </div>
 
   <div class="tt-middle">
     <div class="tt-ball-track"><span class="tt-ball">@ref</span></div>
-    <div class="tt-pass tt-right"><span>v0.8.0: a name is the contract</span><i>→</i><span>toolset moves to <code>NotAuthored</code></span></div>
-    <div class="tt-pass tt-left"><span>"ask the user" in any toolset</span><i>←</i><span>interrupt tool</span></div>
-    <div class="tt-pass tt-right"><span>v0.12.0 released</span><i>→</i><span>toolset upgrades two days later</span></div>
   </div>
 
   <div class="tt-player tt-daniel">
-    <div class="tt-avatar">DW</div>
+    <img class="tt-avatar" src="/images/mcp-runtime/daniel-wiesmann.jpg" alt="Daniel Wiesmann" />
     <div class="tt-name">Daniel</div>
     <div class="tt-role">builds the geo assistant on it</div>
-    <div class="tt-stat"><b>8</b> toolset PRs · <b>3</b> runtime PRs</div>
   </div>
 </div>
 
-<p class="tt-foot">100 days · 49 releases · two people, each with a coding agent, meeting in pull requests</p>
+<p class="tt-foot">Two people, each with a coding agent, meeting in pull requests</p>
 
 <LogoHorPos position="bottom-right" height="20px" />
 
@@ -455,17 +405,11 @@ dim: true
 class: px-10
 ---
 
-# Thank you
+# Demo Time!
 
 <p text-2xl mt-6>Daniel Wiesmann · Ciaran Sweet</p>
 
-<div flex items-center gap-8 mt-10 text-left>
-  <QRCode data="https://github.com/developmentseed/mcp-toolsets-runtime" :width="140" :height="140" :dotsOptions="{ type: 'classy-rounded', color: 'white' }" />
-  <div>
-    <p text-xl m-0><b>Try it.</b> The runtime is open source.</p>
-    <p text-xl mt-2 mb-0><code text-primary>developmentseed/mcp-toolsets-runtime</code></p>
-  </div>
-</div>
+<p text-xl mt-10><code text-primary>github.com/developmentseed/mcp-toolsets-runtime</code></p>
 
 <LogoHorNegMono position="bottom-right" />
 
