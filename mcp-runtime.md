@@ -26,10 +26,10 @@ layout: title
 image: /images/theme/landsat8-ord-river-australia.jpg
 ---
 
-# Tool data, handled in middleware
+# MCP Toolset Runtime
 
 ::subtitle::
-developmentseed/mcp-toolsets-runtime
+Tool data, handled in middleware
 
 <DecorativeRectangle
   width="50%"
@@ -43,7 +43,7 @@ developmentseed/mcp-toolsets-runtime
 >
   <div w-full h-full relative flex flex-col items-end justify-end p-4 text-white text-right>
     <h3 text-3xl>
-      Big Tent
+      Big Tent · Nov 2026
     </h3>
     <h5 text-sm>
       Ciaran Sweet · Daniel Wiesmann
@@ -382,7 +382,7 @@ class: px-10
 
 # Demo Time!
 
-<p text-2xl mt-6>Daniel Wiesmann · Ciaran Sweet</p>
+<p text-2xl mt-6>Ciaran Sweet · Daniel Wiesmann</p>
 
 <p text-xl mt-10><code text-primary>github.com/developmentseed/mcp-toolsets-runtime</code></p>
 
