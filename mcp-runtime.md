@@ -29,7 +29,7 @@ image: /images/theme/landsat8-ord-river-australia.jpg
 # Tool data, handled in middleware
 
 ::subtitle::
-developmentseed/mcp-toolset-runtime
+developmentseed/mcp-toolsets-runtime
 
 <DecorativeRectangle
   width="50%"
@@ -129,6 +129,8 @@ class: four-in-one
     <code>the bundled web client</code>
   </div>
 </div>
+
+<p class="fio-modular"><b>Modular:</b> use each part on its own. A toolset is a standalone MCP server, so any MCP client can call it.</p>
 
 <p class="fio-tagline">Write your tools. Get everything else included.</p>
 

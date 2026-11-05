@@ -45,7 +45,8 @@
 .four-in-one .fio-n { width: 2.2rem; height: 2.2rem; border-radius: 50%; background: #CF3F02; color: white; display: flex; align-items: center; justify-content: center; font-family: 'Antarctica VAR', sans-serif; font-variation-settings: 'wdth' 24, 'wght' 640; font-weight: 700; font-size: 1.2rem; }
 .four-in-one .fio-what { font-size: 1.05rem; line-height: 1.35; flex-grow: 1; }
 .four-in-one .fio-tile code { font-size: 0.75rem; align-self: flex-start; }
-.four-in-one .fio-tagline { text-align: center; font-family: 'Antarctica VAR', sans-serif; font-variation-settings: 'wdth' 24, 'wght' 640; font-weight: 700; font-size: 2rem; margin-top: 2.2rem; color: #CF3F02; }
+.four-in-one .fio-tagline { text-align: center; font-family: 'Antarctica VAR', sans-serif; font-variation-settings: 'wdth' 24, 'wght' 640; font-weight: 700; font-size: 2rem; margin-top: 1.2rem; color: #CF3F02; }
+.four-in-one .fio-modular { text-align: center; font-size: 1rem; margin-top: 1.4rem; }
 
 /* Not-eoAPI slide: the apps ported to the runtime, as chips. */
 .not-eoapi .ne-apps { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; margin: 0.9rem 0 0; }
