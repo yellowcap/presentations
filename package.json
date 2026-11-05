@@ -4,12 +4,16 @@
   "private": true,
   "packageManager": "pnpm@9.15.0",
   "scripts": {
-    "build": "npm run build:gnw -- --base /gnw/ && npm run build:mcp-runtime -- --base /mcp-runtime/ && npm run build:index",
-    "build:gnw": "slidev build gnw.md --out dist/gnw",
-    "build:mcp-runtime": "slidev build mcp-runtime.md --out dist/mcp-runtime",
-    "build:index": "mkdir -p dist && cp site/index.html dist/index.html && cp public/meta/favicon.png dist/favicon.png && cp public/images/logos/hor--pos@2x.png dist/logo.png && cp public/images/logos/hor--neg-mono@2x.png dist/logo-dark.png",
-    "dev": "slidev gnw.md --open",
-    "dev:mcp-runtime": "slidev mcp-runtime.md --open",
+    "build": "npm run build:gnw -- --base /gnw/ && npm run build:mcp-runtime -- --base /mcp-runtime/ && npm run build:genai4earth -- --base /genai4earth/ && npm run build:index",
+    "build:gnw": "slidev build decks/gnw/slides.md --out ../../dist/gnw",
+    "build:mcp-runtime": "slidev build decks/mcp-runtime/slides.md --out ../../dist/mcp-runtime",
+    "build:genai4earth": "slidev build decks/genai4earth/slides.md --out ../../dist/genai4earth",
+    "build:index": "mkdir -p dist && cp site/index.html site/favicon.png site/logo.png site/logo-dark.png dist/",
+    "dev": "slidev decks/gnw/slides.md --open",
+    "dev:mcp-runtime": "slidev decks/mcp-runtime/slides.md --open",
+    "dev:genai4earth": "slidev decks/genai4earth/slides.md --open",
+    "dev:theme-showcase": "slidev decks/theme-showcase/slides.md --open",
+    "dev:original": "slidev decks/original/slides.md --open",
     "export": "slidev export"
   },
   "dependencies": {

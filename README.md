@@ -6,7 +6,7 @@ To start the slide show:
 - `pnpm dev`
 - visit <http://localhost:3030>
 
-`pnpm dev` shows the GNW deck ([gnw.md](./gnw.md)). See [Decks](#decks) for the other decks.
+`pnpm dev` shows the GNW deck ([decks/gnw/slides.md](./decks/gnw/slides.md)). See [Decks](#decks) for the other decks.
 
 Learn more about Slidev at the [documentation](https://sli.dev/).
 
@@ -118,29 +118,39 @@ see the theme in action!
 
 ## Decks
 
-This repo has more than one deck. Each deck is a Markdown file in the root folder. The site root is an index page that links to each deck.
+Each deck has its own folder in `decks/`. The folder holds the slides (`slides.md`) and the static files of the deck (`public/`). The `theme/` folder is shared. The site root is an index page that links to each deck.
 
-| File | Talk | Path on the site |
+| Folder | Talk | Path on the site |
 | --- | --- | --- |
-| `gnw.md` | Global Nature Watch Horizon | `/gnw/` |
-| `mcp-runtime.md` | MCP Toolset Runtime (Big Tent) | `/mcp-runtime/` |
+| `decks/gnw/` | Global Nature Watch Horizon | `/gnw/` |
+| `decks/mcp-runtime/` | MCP Toolset Runtime (Big Tent) | `/mcp-runtime/` |
+| `decks/genai4earth/` | GenAI4Earth WP7, T7.2 Intelligent Data Search and Querying | `/genai4earth/` |
+| `decks/theme-showcase/` | Theme showcase (not on the site) | - |
+| `decks/original/` | Original Slidev demo (not on the site) | - |
 
-To show a deck on your computer, give its file name:
+Slidev reads `public/`, `components/` and `style.css` from the folder of the deck. Thus a deck does not use the files of another deck. Each deck has its own copy of the font, the logos and the favicon.
+
+To show a deck on your computer, give its path:
 
 ```bash
-pnpm slidev mcp-runtime.md
+pnpm slidev decks/mcp-runtime/slides.md
 ```
 
-The build has three steps:
+The build has four steps:
 
 1. `pnpm run build:gnw` makes the GNW deck in `dist/gnw/`.
 2. `pnpm run build:mcp-runtime` makes the MCP runtime deck in `dist/mcp-runtime/`.
-3. `pnpm run build:index` copies the index page (`site/index.html`) to `dist/`.
+3. `pnpm run build:genai4earth` makes the GenAI4Earth deck in `dist/genai4earth/`.
+4. `pnpm run build:index` copies the index page and its images (`site/`) to `dist/`.
 
-`pnpm run build` runs the three steps for a site at the root of a domain (Netlify and Vercel). The GitHub Pages workflow runs each step with the base path of the repository.
+`pnpm run build` runs the four steps for a site at the root of a domain (Netlify and Vercel). The GitHub Pages workflow runs each step with the base path of the repository.
 
 The decks use hash URLs, for example `/mcp-runtime/#/4`. Thus a link to a slide works on GitHub Pages.
 
-To add a deck, add its Markdown file, add a `build:<name>` script, add a step to the workflow, and add a card to `site/index.html`.
+To add a deck:
 
-The `MiddlewareFlow` component (`components/MiddlewareFlow.vue`) shows one scene of the walkthrough. Each animation runs in a loop. It does not need a click.
+1. Make `decks/<name>/slides.md` with `theme: '../../theme'`.
+2. Add `decks/<name>/public/` with the font (`fonts/antarctica-vf.ttf`), the favicon, the logos and the images of the deck.
+3. Add a `build:<name>` script (copy an existing one), a step in the workflow, and a card in `site/index.html`.
+
+The `MiddlewareFlow` component (`decks/mcp-runtime/components/MiddlewareFlow.vue`) shows one scene of the walkthrough. Each animation runs in a loop. It does not need a click.

@@ -47,6 +47,9 @@ jobs:
       - name: Build MCP runtime deck
         run: pnpm run build:mcp-runtime --base /${{github.event.repository.name}}/mcp-runtime/
 
+      - name: Build GenAI4Earth deck
+        run: pnpm run build:genai4earth --base /${{github.event.repository.name}}/genai4earth/
+
       - name: Build index page
         run: pnpm run build:index
 

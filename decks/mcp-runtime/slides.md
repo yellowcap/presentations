@@ -15,7 +15,7 @@ favicon: /meta/favicon.png
 addons:
     - slidev-addon-qrcode
 
-theme: './theme'
+theme: '../../theme'
 themeConfig:
   laserColor: '#CF3F02'
   laserWidth: 8

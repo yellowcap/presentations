@@ -19,3 +19,8 @@ status = 200
 from = "/gnw/*"
 to = "/gnw/index.html"
 status = 200
+
+[[redirects]]
+from = "/genai4earth/*"
+to = "/genai4earth/index.html"
+status = 200

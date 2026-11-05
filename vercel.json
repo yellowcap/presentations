@@ -1,7 +1,8 @@
 {
   "rewrites": [
     { "source": "/mcp-runtime/(.*)", "destination": "/mcp-runtime/index.html" },
-    { "source": "/gnw/(.*)", "destination": "/gnw/index.html" }
+    { "source": "/gnw/(.*)", "destination": "/gnw/index.html" },
+    { "source": "/genai4earth/(.*)", "destination": "/genai4earth/index.html" }
   ],
   "buildCommand": "npm run build",
   "outputDirectory": "dist"
