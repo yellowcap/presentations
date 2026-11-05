@@ -4,7 +4,7 @@ info: |
   How the MCP runtime keeps large tool results out of the model's context. Development Seed Big Tent. Daniel Wiesmann and Ciaran Sweet, Development Seed.
 class: text-center
 highlighter: shiki
-# Hash URLs (#/4), so a link to any slide works on GitHub Pages. The site has one 404.html, and it belongs to slides.md.
+# Hash URLs (#/4), so a link to any slide works on GitHub Pages.
 routerMode: hash
 drawings:
   persist: false
@@ -174,8 +174,6 @@ gap: 8
 ---
 
 # Big tool results, small context
-
-<p class="focus-line">Today: box 2, the agent with state and provenance</p>
 
 <div mt-5 />
 

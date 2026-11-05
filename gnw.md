@@ -4,6 +4,8 @@ info: |
   Demo deck for Global Nature Watch Horizon (project-zeno): Daniel Wiesmann, Soumya Ranjan, Leo Thomas, Development Seed.
 class: text-center
 highlighter: shiki
+# Hash URLs (#/4), so a link to any slide works on GitHub Pages.
+routerMode: hash
 drawings:
   persist: false
   enable: false

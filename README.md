@@ -6,7 +6,7 @@ To start the slide show:
 - `pnpm dev`
 - visit <http://localhost:3030>
 
-Edit the [slides.md](./slides.md) to see the changes.
+`pnpm dev` shows the GNW deck ([gnw.md](./gnw.md)). See [Decks](#decks) for the other decks.
 
 Learn more about Slidev at the [documentation](https://sli.dev/).
 
@@ -69,7 +69,7 @@ In presenter mode the trail is mirrored to the audience window. It rides on
 Slidev's presenter cursor sync, so "Show presenter cursor" must be enabled — the
 toolbar button turns it on for you, `Shift`+drag alone does not.
 
-Tune it from the headmatter of `slides.md`:
+Tune it from the headmatter of a deck file, for example `gnw.md`:
 
 ```md
 ---
@@ -116,14 +116,14 @@ To add your logo:
 I've also created slides-devseed-demo.md that demonstrates all the features. You can preview it by updating your slides.md or running the dev server to
 see the theme in action!
 
-## Other decks
+## Decks
 
-This repo has more than one deck. Each deck is a Markdown file in the root folder.
+This repo has more than one deck. Each deck is a Markdown file in the root folder. The site root is an index page that links to each deck.
 
-| File | Talk |
-| --- | --- |
-| `slides.md` | Global Nature Watch Horizon |
-| `mcp-runtime.md` | Tool data, handled in middleware: the MCP runtime (Big Tent) |
+| File | Talk | Path on the site |
+| --- | --- | --- |
+| `gnw.md` | Global Nature Watch Horizon | `/gnw/` |
+| `mcp-runtime.md` | MCP Toolset Runtime (Big Tent) | `/mcp-runtime/` |
 
 To show a deck on your computer, give its file name:
 
@@ -131,6 +131,16 @@ To show a deck on your computer, give its file name:
 pnpm slidev mcp-runtime.md
 ```
 
-The build makes the main deck from `slides.md`. Then `pnpm run build:mcp-runtime` makes the second deck in `dist/mcp-runtime/`. The deploy configuration (GitHub Pages, Netlify and Vercel) runs the two builds. The second deck is at the path `/mcp-runtime/`. It uses hash URLs, for example `/mcp-runtime/#/4`. Thus a link to a slide works on GitHub Pages.
+The build has three steps:
+
+1. `pnpm run build:gnw` makes the GNW deck in `dist/gnw/`.
+2. `pnpm run build:mcp-runtime` makes the MCP runtime deck in `dist/mcp-runtime/`.
+3. `pnpm run build:index` copies the index page (`site/index.html`) to `dist/`.
+
+`pnpm run build` runs the three steps for a site at the root of a domain (Netlify and Vercel). The GitHub Pages workflow runs each step with the base path of the repository.
+
+The decks use hash URLs, for example `/mcp-runtime/#/4`. Thus a link to a slide works on GitHub Pages.
+
+To add a deck, add its Markdown file, add a `build:<name>` script, add a step to the workflow, and add a card to `site/index.html`.
 
 The `MiddlewareFlow` component (`components/MiddlewareFlow.vue`) shows one scene of the walkthrough. Each animation runs in a loop. It does not need a click.

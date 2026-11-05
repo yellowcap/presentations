@@ -1,8 +1,8 @@
 {
   "rewrites": [
     { "source": "/mcp-runtime/(.*)", "destination": "/mcp-runtime/index.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/gnw/(.*)", "destination": "/gnw/index.html" }
   ],
-  "buildCommand": "npm run build && npm run build:mcp-runtime -- --base /mcp-runtime/",
+  "buildCommand": "npm run build",
   "outputDirectory": "dist"
 }

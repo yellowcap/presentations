@@ -4,9 +4,12 @@
   "private": true,
   "packageManager": "pnpm@9.15.0",
   "scripts": {
-    "build": "slidev build",
+    "build": "npm run build:gnw -- --base /gnw/ && npm run build:mcp-runtime -- --base /mcp-runtime/ && npm run build:index",
+    "build:gnw": "slidev build gnw.md --out dist/gnw",
     "build:mcp-runtime": "slidev build mcp-runtime.md --out dist/mcp-runtime",
-    "dev": "slidev --open",
+    "build:index": "mkdir -p dist && cp site/index.html dist/index.html && cp public/meta/favicon.png dist/favicon.png && cp public/images/logos/hor--pos@2x.png dist/logo.png && cp public/images/logos/hor--neg-mono@2x.png dist/logo-dark.png",
+    "dev": "slidev gnw.md --open",
+    "dev:mcp-runtime": "slidev mcp-runtime.md --open",
     "export": "slidev export"
   },
   "dependencies": {
