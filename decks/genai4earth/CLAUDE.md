@@ -19,22 +19,62 @@ This file is a hand-off for future sessions. It sums up the work so far on this 
 
 ## Open gaps
 
-- **Project site not read.** The fetch of the GenAI4Earth site was stopped by the user. The deck has no partner names, WP7 wording or T7.2 text. Read the site before adding them
+- Project site was read on 6 Nov 2026. See "Project context" below
 - The user's claude.ai chat history is not visible to Claude Code. A search of past Claude Code sessions found nothing on GenAI4Earth
 - Last slide links to `github.com/developmentseed/mcp-toolsets-runtime`. Replace it if a better link exists
 - Some slides only name a topic, because the survey had no evidence: quantisation, pgvector, Chroma, GraphRAG (not used yet by the user), ESA EVE, GitHub Action cron build, Helm chart as stated by the user. Check them before adding facts
 
-## The flow (21 slides, seven parts)
+## Project context (site read 6 Nov 2026; WP7 text pasted by the user from the proposal)
 
-Each slide has a small tag with its part number.
+**Project (https://genai4earth.earth-data.eu/)**
 
-1. **Scope:** the question; what we index (datasets, docs, literature; ESA EVE as example); flow of the talk
-2. **Data foundation:** catalogue (STAC, cloud-native assets, virtual Zarr / Kerchunk); keep the index up to date (GitHub Action on a cron, CI is core); storage and deployment (Kubernetes, Helm)
-3. **Search core:** chunking; embedding model; vector database; metadata next to vectors; reranking vs plain vector search; GraphRAG
-4. **Agent layer:** from RAG to tools (four steps); tools that make valid queries and geocode; three ways in; MCP views
-5. **Quality:** evals at two levels
-6. **Production:** stay modular; no LLMs inside tools; generic tools; plug-and-play models
-7. **Discussion:** users, first datasets, scope, GenAI4Earth integration, catalogues
+- Full name: Generative Artificial Intelligence for Earth System. Horizon Europe, call HORIZON-INFRA-01-EOSC-05, GA 101293266. Runs Sep 2026 to Aug 2029
+- Mission: reusable, trustworthy GenAI services for Earth System Sciences (ESS). Integrate FAIR data, models and workflows into the EOSC ecosystem
+- Objectives: GenAI tools for FAIRness, machine-actionability, AI-readiness, provenance; AI interfaces for discovery, access, cross-domain integration; responsible AI (reproducible, explainable, transparent, frugal); capacity building
+- 17 partners, coordinator CNRS. Includes Development Seed. Advisory board: "coming soon"
+- Part of the AI4EOSC ecosystem. Services will be available there (federated AAI, training catalogues, traceability). GenAI4Earth adds GenAI, explainability dashboards, bias monitoring, FAIRification pipelines
+- Four pillars: (1) governance, policy, EOSC alignment WP1-6; (2) GenAI services and scientific co-design WP7-10; (3) infrastructure WP11-12 (federated HPC/cloud; WP12 deploys WP7/WP8 services); (4) capacity building WP13-14
+- Three pilots (WP9/10): **Urban** (foundation models, VLMs, FO-DAS; Munich, Leipzig, Grenoble, Strasbourg); **Agro-forestry** (trait-based phenotyping; the pipeline uses an LLM with RAG; AnaEE, eLTER); **Seismology** (seismic + fibre-optic DAS; EPOS, Data Terra, NFDI)
+- Site pages not read: outputs, news, trainings, validation opportunities, helpdesk
+
+**WP7: AI-ready Dataspaces, Service Co-design and Prototyping** (lead INRAE, M1-M18)
+
+- Dual strategy: AI as a backend tool to automate dataspace creation, and a frontend service for discovery. Co-design loop with the pilots. Frugal and responsible AI
+- Scales an end-to-end system from the INRAE Recherche Data Gouv catalogue. Uses Development Seed's DestinE Digital Twin Assistant as a flagship example
+- T7.1 metadata management (INRAE): pre-fill deposit forms from DMPs, papers, READMEs; "Curation Advisor" with an LLM agent swarm
+- **T7.2 Tools for Intelligent Data Search / Querying (lead Development Seed; INRAE, CNRS, GFZ, NKUA; M2-M18)** - this talk
+- T7.3 actionable DMPs (UEDIN); T7.4 explainable GenAI, provenance with C2PA, SHAP/LIME, human-aligned embeddings (NKUA); T7.5 GenAI scientific workflows, LangGraph agent swarm (KIT); T7.6 model engineering, aligned embeddings GeoCLIP/satCLIP (INRIA)
+
+**T7.2 text from the proposal**
+
+- Challenge: discover and combine very heterogeneous data: geospatial imagery, phenotype observations, seismological data, scientific reports
+- Builds on TRL7 work: the semantic search prototype for the French research data catalogue (catalogue.proto-sandbox.portail-rdg-dev.fr) and the `stac-semantic-search` extension
+- Strategy: RAG. Convert rich metadata from all sources into one semantic vector space. Conversational discovery across domains
+- Proposal tech: agents with **LangChain**; **Mistral** models for interpretation; **Nomic** models for embeddings
+- **Tension to handle with care:** our own tests found Qwen3-Embedding beat nomic, and our recent work uses MCP toolsets, not LangChain. The deck says "what we learned so far" and does not contradict the proposal. Decided 6 Nov 2026: keep the "Where we start" slide as written (proposal baseline next to what we learned)
+- Links to other tasks: T7.5 "Data Discovery" agent will call these search tools; T7.4 wants provenance and explanations on AI-made metadata; T7.1 improves the metadata that search depends on
+
+## The flow (38 slides, five parts, each with a divider slide)
+
+Reordered on 6 Nov 2026. Visual pass done the same day.
+
+1. **Embedding search, in plain words:** meaning vs keywords (SVG map); how it works; what RAG is
+2. **Why it matters:** GenAI4Earth in brief (Earth photo); three pilots; Task 7.2; where we start; the question (orange slide); what we index; fitness for purpose (and literature?); from RAG to tools
+3. **Building blocks:** catalogue; chunking; embedding model; vector database; metadata filters; metadata quality (thin vs rich); grep vs vectors (May 2026 paper, text from the user, paper not read); reranking (funnel); GraphRAG (SVG graph); valid-query tools
+4. **In practice:** evals; three ways in; MCP views; cost and speed (big numbers); index updates; storage and deployment; design for production (blue slide)
+5. **Summary** (green slide) **and discussion**
+
+## Visual system (how the deck is built)
+
+- `slides.md` is generated by hand-written Slidev markdown. Slides use `section: N` in frontmatter. `global-bottom.vue` reads it and draws the footer: EOSC | GenAI4Earth logo and a breadcrumb (1 to 5). Slides without `section` (title, dividers, colored slides, thank-you) have no footer
+- Footer logo is the combined EOSC | GenAI4Earth logo from the project site (`public/images/logos/eosc-genai4earth.png`, cropped). It is also on the title slide and, in a white pill, on the last slide
+- `components/Flow.vue`: row of numbered colored steps. `components/EmbeddingMap.vue`: SVG map of meaning space
+- `style.css`: classes `g-cards` (`c2`/`c3`/`c4`), `g-card` (`c-primary|info|success|danger|warning`, `solid`), `g-big`, `g-banner`, `g-funnel`, `divider`
+- Dividers: theme `cover` layout with a dimmed satellite image and `class: divider`. Colored slides: `cover` layout with `background: "#hex"`
+- In SVG, set font size with `style="font-size:Npx"`, not the attribute. The deck CSS overrides the attribute
+- New files (components, style.css, global-bottom.vue) need a dev server restart to be picked up
+- Photos from the internet: `public/images/g4e/earth.jpg` (NASA Blue Marble 2005, public domain, via Wikimedia Commons) and `crops.jpg` (NASA Landsat crops in Kansas, public domain, via Wikimedia Commons). Satellite theme images were copied from the other decks
+- The Browser pane must be shown (`show_pane preview`) for screenshots. Wait about 3 s after a hash change, or the shot shows the previous slide
 
 ## Ideas from the user (brain dump, all in the deck)
 
@@ -87,10 +127,10 @@ About 45 repos in `/home/tam/Documents/repos/` were checked. Use these for the d
 
 ## How the user works
 
-- Wants simple bullets first, detail later
+- Wants simple bullets first, detail later. Now prefers less text and more visuals (6 Nov 2026)
 - Wants a sequential flow that makes sense
 - Prefers plain, short sentences (ASD-STE100 style, see the global CLAUDE.md)
-- The deck uses the shared DevSeed theme, the section tag style `<p class="text-primary font-mono">N · Part</p>`, and `<LogoHorPos>` on each content slide
+- The deck uses the shared DevSeed theme, `section: N` frontmatter for the footer breadcrumb, and `<LogoHorPos>` on content slides. The last slide has the EU funding note (flag at `public/images/eu-flag.svg`, grant agreement 101293266)
 
 ## Next steps
 

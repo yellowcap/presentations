@@ -1,0 +1,39 @@
+/* Shared visuals for the genai4earth deck. */
+.g-flow { display: flex; align-items: stretch; gap: 0.4rem; margin: 1.5rem 0; }
+.g-step { flex: 1; color: white; border-radius: 10px; padding: 0.8rem 0.7rem; text-align: center; display: flex; flex-direction: column; gap: 0.2rem; }
+.g-step.dark-text { color: #222; }
+.g-arrow { align-self: center; font-size: 1.6rem; color: #999; }
+.g-n { font-family: 'Roboto Mono', monospace; font-size: 0.8rem; opacity: 0.8; }
+.g-t { font-family: 'Antarctica VAR', sans-serif; font-variation-settings: 'wdth' 24, 'wght' 640; font-size: 1.15rem; line-height: 1.15; }
+.g-s { font-size: 0.8rem; line-height: 1.25; opacity: 0.92; }
+
+.g-cards { display: grid; gap: 1rem; margin: 1.2rem 0; }
+.g-cards.c2 { grid-template-columns: 1fr 1fr; }
+.g-cards.c3 { grid-template-columns: 1fr 1fr 1fr; }
+.g-cards.c4 { grid-template-columns: repeat(4, 1fr); }
+.g-card { border-radius: 10px; padding: 1rem 1.1rem; border-top: 6px solid var(--c, #CF3F02); background: rgba(0,0,0,0.035); line-height: 1.3; }
+.g-card h4 { margin: 0 0 0.4rem; font-size: 1.15rem; font-family: 'Antarctica VAR', sans-serif; font-variation-settings: 'wdth' 24, 'wght' 640; }
+.g-card p { margin: 0.3rem 0 0; font-size: 0.95rem; }
+.g-card.solid { background: var(--c); color: white; border-top: 0; }
+.g-big { font-family: 'Antarctica VAR', sans-serif; font-variation-settings: 'wdth' 24, 'wght' 700; font-size: 2.6rem; line-height: 1; color: var(--c, #CF3F02); }
+.g-card.solid .g-big { color: white; }
+.g-small { font-size: 0.85rem; opacity: 0.8; }
+.c-primary { --c: #CF3F02; } .c-info { --c: #2E86AB; } .c-success { --c: #4DA167; } .c-danger { --c: #A71D31; } .c-warning { --c: #E2C044; }
+
+.g-map { width: 100%; height: auto; }
+.g-banner { background: #CF3F02; color: white; border-radius: 10px; padding: 0.8rem 1.2rem; font-size: 1.3rem; text-align: center; margin-top: 1.2rem; }
+
+.g-funnel { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; margin-top: 1.5rem; }
+.g-funnel > div { color: white; border-radius: 8px; padding: 0.55rem 1rem; text-align: center; line-height: 1.2; }
+.g-funnel b { font-size: 1.3rem; }
+
+.g-photo { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
+
+/* On colored cover slides the bullet markers must be visible. */
+.cover-content ul li::marker, .cover-content ol li::marker { color: inherit; }
+.cover-content li { font-size: 1.5rem; }
+
+/* Divider slide */
+.divider .d-n { font-family: 'Roboto Mono', monospace; font-size: 5rem; opacity: 0.85; line-height: 1; }
+.divider h1 { font-size: 4rem !important; }
+.divider .d-sub { font-size: 1.5rem; opacity: 0.9; margin-top: 0.5rem; }
