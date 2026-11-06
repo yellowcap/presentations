@@ -37,3 +37,9 @@
 .divider .d-n { font-family: 'Roboto Mono', monospace; font-size: 5rem; opacity: 0.85; line-height: 1; }
 .divider h1 { font-size: 4rem !important; }
 .divider .d-sub { font-size: 1.5rem; opacity: 0.9; margin-top: 0.5rem; }
+
+/* Demo cards: text left, QR code right */
+.g-card.demo { display: flex; gap: 0.8rem; align-items: center; justify-content: space-between; }
+.g-card.demo > div:first-child { min-width: 0; }
+.g-card.demo code { overflow-wrap: anywhere; }
+.g-card.demo > div:last-child { flex-shrink: 0; }

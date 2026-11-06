@@ -3,7 +3,7 @@
 const pts = [
   { x: 95, y: 70, l: 'ocean surface height', g: 0 },
   { x: 140, y: 105, l: 'sea level rise', g: 0, q: true },
-  { x: 70, y: 125, l: 'tide gauge records', g: 0 },
+  { x: 125, y: 155, l: 'tide gauge records', g: 0 },
   { x: 330, y: 65, l: 'wildfire burned area', g: 1 },
   { x: 375, y: 110, l: 'forest fire map', g: 1 },
   { x: 300, y: 115, l: 'fire radiative power', g: 1 },
@@ -11,8 +11,8 @@ const pts = [
   { x: 170, y: 280, l: 'wheat phenology', g: 2 },
   { x: 80, y: 290, l: 'soil moisture', g: 2 },
   { x: 340, y: 255, l: 'seismic waveforms', g: 3 },
-  { x: 390, y: 290, l: 'earthquake catalogue', g: 3 },
-  { x: 305, y: 295, l: 'fibre optic DAS', g: 3 },
+  { x: 395, y: 285, l: 'earthquake catalogue', g: 3 },
+  { x: 290, y: 300, l: 'fibre optic DAS', g: 3 },
 ]
 const col = ['info', 'danger', 'success', 'warning']
 </script>
