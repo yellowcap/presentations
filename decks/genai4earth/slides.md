@@ -327,19 +327,16 @@ layout: default
 section: 3
 ---
 
-# The catalogue underneath
+# Catalogue scope: aggregator or host?
 
-<div class="g-cards c3">
-  <div class="g-card c-primary"><h4>STAC</h4><p>Our default source of truth</p></div>
-  <div class="g-card c-success"><h4>Cloud native</h4><p>COG, Zarr, GeoParquet. Search finds it, access must work too</p></div>
-  <div class="g-card c-info"><h4>Not cloud native?</h4><p>Add a virtual layer: virtual Zarr, Kerchunk</p></div>
-</div>
-<p class="text-muted">Open: which catalogues does GenAI4Earth need?</p>
+<CatalogueScope />
+
+<p class="text-muted" style="margin-top:.2rem">Open questions: which catalogues do we index, and do we host any data ourselves?</p>
 
 <LogoHorPos position="bottom-right" height="24px" />
 
 <!--
-STAC is our default source of truth. Search finds the data, but access must also work. Cloud-native formats help. For other data, a virtual layer such as virtual Zarr or Kerchunk can help.
+This is about scope, and it is still open. At one end, we are an aggregator: a metadata repository that indexes other catalogues and links out. In the middle, we link to assets that others host, and we add virtual layers such as virtual Zarr or Kerchunk to make access easier. At the other end, we host data ourselves, for example model output. When we control the data, cloud-native formats make sense. STAC is a good option for spatial data in all three cases, because a lot of tooling is available.
 -->
 
 ---
@@ -672,7 +669,7 @@ section: 5
   <div class="g-card c-info"><h4>Datasets</h4><p>Which ones first?</p></div>
   <div class="g-card c-success"><h4>Scope</h4><p>Datasets only, or literature too? How do we judge fitness for purpose?</p></div>
   <div class="g-card c-danger"><h4>Integration</h4><p>How does this fit the GenAI4Earth ecosystem?</p></div>
-  <div class="g-card c-warning"><h4>Catalogues</h4><p>Which ones? Are the assets cloud native?</p></div>
+  <div class="g-card c-warning"><h4>Catalogue scope</h4><p>Aggregate only, or host data too?</p></div>
 </div>
 
 <LogoHorPos position="bottom-right" height="24px" />
@@ -694,7 +691,7 @@ class: px-10
 
 <p text-2xl mt-6>Daniel Wiesmann · Development Seed</p>
 
-<p text-xl mt-10><code text-primary>github.com/developmentseed/mcp-toolsets-runtime</code></p>
+<p text-lg mt-10><code text-primary>github.com/yellowcap</code></p>
 
 <div absolute bottom-10 left-10 flex items-center gap-5 text-left>
   <img src="/images/eu-flag.svg" alt="European Union flag" style="height:64px;width:auto" />
