@@ -5,7 +5,7 @@ import { useNav } from '@slidev/client'
 // Breadcrumb and project logo at the bottom of every content slide.
 // A slide opts in with `section: 1..5` in its frontmatter.
 const { currentSlideRoute } = useNav()
-const parts = ['Embedding search', 'Why it matters', 'Building blocks', 'In practice', 'Summary']
+const parts = ['Why it matters', 'Embedding theory overview', 'Building blocks', 'In practice', 'Try it and discuss']
 const section = computed(() => Number(currentSlideRoute.value?.meta?.slide?.frontmatter?.section ?? 0))
 </script>
 
