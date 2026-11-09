@@ -63,7 +63,7 @@ layout: default
   <div class="g-step c-info" style="background:#2E86AB"><div class="g-n">2</div><div class="g-t">Embedding theory overview</div><div class="g-s">search by meaning, in plain words</div></div>
   <div class="g-step" style="background:#4DA167"><div class="g-n">3</div><div class="g-t">Building blocks</div><div class="g-s">from RAG to tools: data, models, retrieval</div></div>
   <div class="g-step" style="background:#A71D31"><div class="g-n">4</div><div class="g-t">In practice</div><div class="g-s">evals, cost, backend, three ways in</div></div>
-  <div class="g-step" style="background:#565B65"><div class="g-n">5</div><div class="g-t">Try it</div><div class="g-s">demos and discussion</div></div>
+  <div class="g-step" style="background:#565B65"><div class="g-n">5</div><div class="g-t">Demo time</div><div class="g-s">demos and discussion</div></div>
 </div>
 
 <LogoHorPos position="bottom-right" height="24px" />
@@ -642,19 +642,18 @@ layout: default
 section: 5
 ---
 
-# Try it
+# Demo time
 
 <div class="g-cards c2" style="margin-top:0.8rem">
   <div class="g-card c-primary demo"><div><h4>stac-zap</h4><p>Natural language to a valid STAC query</p><p class="g-small"><code>developmentseed.org/stac-zap</code></p></div><QRCode data="https://developmentseed.org/stac-zap/" :width="84" :height="84" /></div>
-  <div class="g-card c-success demo"><div><h4>Global Nature Watch · WRI</h4><p>An agent for nature and land data, with dataset search and place search</p><p class="g-small"><code>globalnaturewatch.org</code></p></div><QRCode data="https://www.globalnaturewatch.org" :width="84" :height="84" /></div>
-  <div class="g-card c-info demo"><div><h4>DestinE Digital Twin Assistant · ECMWF</h4><p>The WP7 flagship example</p><p class="g-small"><code>assistant-test.destine.ecmwf.int</code><br/>Test instance, may need a DestinE login</p></div><QRCode data="https://assistant-test.destine.ecmwf.int" :width="84" :height="84" /></div>
-  <div class="g-card c-danger demo"><div><h4>Code: mcp-toolsets-runtime</h4><p>Tools as MCP servers on a shared runtime</p><p class="g-small"><code>github.com/developmentseed/<wbr><span style="white-space:nowrap">mcp-toolsets-runtime</span></code></p></div><QRCode data="https://github.com/developmentseed/mcp-toolsets-runtime" :width="84" :height="84" /></div>
+  <div class="g-card c-success demo"><div><h4>Global Nature Watch · WRI</h4><p>An agent for nature and land data, with dataset search and place search</p><p class="g-small"><code>horizon.globalnaturewatch.org</code></p></div><QRCode data="https://horizon.globalnaturewatch.org/" :width="84" :height="84" /></div>
+  <div class="g-card c-info" style="grid-column:span 2"><h4>DestinE Digital Twin Assistant · ECMWF</h4><p>The WP7 flagship example. Live demo now; not public yet</p></div>
 </div>
 
 <LogoHorPos position="bottom-right" height="24px" />
 
 <!--
-stac-zap changes a plain-language question into a valid STAC query. Global Nature Watch from WRI is an agent for nature and land data, with dataset search and place search. The DestinE Digital Twin Assistant for ECMWF is the WP7 flagship example; the link is a test instance and can need a DestinE login. The code for the tool runtime is open on GitHub.
+stac-zap changes a plain-language question into a valid STAC query. Global Nature Watch from WRI is an agent for nature and land data, with dataset search and place search. The DestinE Digital Twin Assistant for ECMWF is the WP7 flagship example. I show it live now. It is not launched yet, so there is no link to share.
 -->
 
 ---
